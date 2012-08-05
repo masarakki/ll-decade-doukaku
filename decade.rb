@@ -2,7 +2,7 @@ class String
   def ipv4?
     tokens = self.split(/\./)
     tokens.count == 4 && tokens.all? do |x|
-      x.match(/^\d+$/) && x.to_i >= 0 && x.to_i < 256
+      x.match(/^\d+$/) && x.to_i >= 0 && x.to_i < 256 && (x == "0" || !(x =~ /^0/))
     end
   end
 

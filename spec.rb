@@ -2,7 +2,7 @@ require_relative 'decade'
 describe String do
 
   describe :ipv4? do
-    {"19.232.98.2" => true, "100.200.100.300" => false}.each do |token, type|
+    {"19.232.98.2" => true, "100.200.100.300" => false, "0.0.0.0" => true, "00.0.0.0" => false}.each do |token, type|
       describe token do
         subject { token }
         case type
